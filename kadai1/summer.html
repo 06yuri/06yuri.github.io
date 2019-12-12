@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="js/jquery-2.1.3.min.js" ></script>
+<link rel="stylesheet" href="css/sample.css">
+<title>夏の思い出</title>
+
+</head>
+<body>
+
+<header>
+    <h1>夏の思い出</h1>
+</header>
+
+<main>
+    <h3>写真をタップ☺</h3>
+    <button id="sa"><img src="animal/sa1.JPG"></button>
+    <button id="ze"><img src="animal/ze1.JPG"></button>
+    <button id="chico"><img src="animal/chico1.JPG"></button>
+<!--
+<br>
+<br>  
+<div class="square_btn">
+<button2  id="ura">MY PAGE</button2>
+</div>
+
+-->
+    
+<div class="popup">
+<div class="content">
+        8月30日～9月2日<br>ラケットボール部合宿<br>毎年お世話になっている静岡のラケットボールコートがあるホテルに合宿をしてきました。<br>今年は天気も良くてみんなで花火もできて楽しかったです。<br><img class="img2" src="animal/sa2.JPG">
+<button3 id="close">戻る</button3>
+    </div>
+</div>
+    
+<div class="popup2">
+<div class="content">
+        9月9日～9月10日<br>中野ゼミ・合宿<br>仙台の石巻で開催しているリボーンアートフェスティバルに参加してきました。<br>初めての東北、海がとても奇麗でした。<br>牛タンとずんだシェイク美味しかったー！<br><img class="img2" src="animal/ze2.JPG">
+<button3 id="close2">戻る</button3>
+    </div>
+</div>
+    
+<div class="popup3">
+<div class="content">
+        8月22日<br>CHiCO with HoneyWorks<br>5thAnniversary<br>HollTour2019<br>ステージ前10列以内で、結構見やすくてセトリも最高で楽しかった‼halcaちゃんのセンチメンタルクライシスが聞けて嬉しかった…!<br>CHiCOちゃんの衣装可愛かったなぁ...<br><img class="img3" src="animal/chico2.JPG">
+<button3 id="close3">戻る</button3>
+    </div>
+</div>
+    
+    
+</main>
+    
+    
+    
+    <script>
+        
+        
+$('#sa').on('click',function(){
+    $('.popup').addClass('show').fadeIn();
+ });
+$('#close').on('click',function(){
+    $('.popup').fadeOut();
+ });
+        
+        
+$('#ze').on('click',function(){
+    $('.popup2').addClass('show').fadeIn();
+ });       
+$('#close2').on('click',function(){
+    $('.popup2').fadeOut();
+ });
+          
+$('#chico').on('click',function(){
+    $('.popup3').addClass('show').fadeIn();
+ });       
+$('#close3').on('click',function(){
+    $('.popup3').fadeOut();
+ });
+    </script>
+    
+
+
+    
+    
+    
+    
+
+<footer>
+    <h2>ＭＥＭＯＲＹ</h2>
+</footer>
+
+
+
+</body>
+</html>
+
