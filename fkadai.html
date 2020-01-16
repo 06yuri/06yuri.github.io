@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Balls</title>
+
+
+
+<!-- 1. ここにP5.jsを読み込む -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
+
+<script>
+    
+var r = 5;
+var a = 100;
+var k = 230;
+
+    
+ //お絵描き   
+function setup() {
+  createCanvas(750, 750,WEBGL);
+  background(230);
+    //↓
+    ambientLight(200, 100, 190);
+    directionalLight(110, 110, 150, 255, -1, 1, 0);
+    ambientMaterial(150, 150, 255, 200);
+    strokeWeight(1);
+    noStroke();
+    //↑
+}
+
+function draw() {
+    background(k);
+    drawObject();
+  if (mouseIsPressed) {
+    stroke(0);
+    line(mouseX - r, mouseY, mouseX + r, mouseY);
+    line(mouseX, mouseY - r, mouseX, mouseY + r);
+  }
+    //赤
+    if((keyIsPressed == true) && (key == 'q')){
+    stroke(255,0,0);
+    line(mouseX - r, mouseY, mouseX + r, mouseY);
+    line(mouseX, mouseY - r, mouseX, mouseY + r);
+    }
+    if((keyIsPressed == true) && (key == 'a')){
+    stroke(255,77,77);
+    line(mouseX - r, mouseY, mouseX + r, mouseY);
+    line(mouseX, mouseY - r, mouseX, mouseY + r);
+    }
+    if((keyIsPressed == true) && (key == 'z')){
+    stroke(179,0,0);
+    line(mouseX - r, mouseY, mouseX + r, mouseY);
+    line(mouseX, mouseY - r, mouseX, mouseY + r);
+    }
+    //青
+    if((keyIsPressed == true) && (key == 'w')){
+    stroke(0,0,255);
+    line(mouseX - r, mouseY, mouseX + r, mouseY);
+    line(mouseX, mouseY - r, mouseX, mouseY + r);
+    }
+    
+    if((keyIsPressed == true) && (key == 's')){
+    stroke(77,77,255);
+    line(mouseX - r, mouseY, mouseX + r, mouseY);
+    line(mouseX, mouseY - r, mouseX, mouseY + r);
+    }
+    
+    if((keyIsPressed == true) && (key == 'x')){
+    stroke(0,0,179);
+    line(mouseX - r, mouseY, mouseX + r, mouseY);
+    line(mouseX, mouseY - r, mouseX, mouseY + r);
+    }
+    
+    //黄色
+    if((keyIsPressed == true) && (key == 'e')){
+    stroke(255,255,0);
+    line(mouseX - r, mouseY, mouseX + r, mouseY);
+    line(mouseX, mouseY - r, mouseX, mouseY + r);
+    }
+    if((keyIsPressed == true) && (key == 'd')){
+    stroke(255,255,155);
+    line(mouseX - r, mouseY, mouseX + r, mouseY);
+    line(mouseX, mouseY - r, mouseX, mouseY + r);
+    }
+    
+    if((keyIsPressed == true) && (key == 'c')){
+    stroke(179,179,0);
+    line(mouseX - r, mouseY, mouseX + r, mouseY);
+    line(mouseX, mouseY - r, mouseX, mouseY + r);
+    }
+    
+    //緑
+    if((keyIsPressed == true) && (key == 'r')){
+    stroke(0,255,0);
+    line(mouseX - r, mouseY, mouseX + r, mouseY);
+    line(mouseX, mouseY - r, mouseX, mouseY + r);
+    }
+    
+    if((keyIsPressed == true) && (key == 'f')){
+    stroke(128,255,128);
+    line(mouseX - r, mouseY, mouseX + r, mouseY);
+    line(mouseX, mouseY - r, mouseX, mouseY + r);
+    }
+    if((keyIsPressed == true) && (key == 'v')){
+    stroke(0,77,0);
+    line(mouseX - r, mouseY, mouseX + r, mouseY);
+    line(mouseX, mouseY - r, mouseX, mouseY + r);
+    }
+    
+    //オレンジ
+    if((keyIsPressed == true) && (key == 't')){
+    stroke(255,165,0);
+    line(mouseX - r, mouseY, mouseX + r, mouseY);
+    line(mouseX, mouseY - r, mouseX, mouseY + r);
+    }
+    if((keyIsPressed == true) && (key == 'g')){
+    stroke(255,193,77);
+    line(mouseX - r, mouseY, mouseX + r, mouseY);
+    line(mouseX, mouseY - r, mouseX, mouseY + r);
+    }
+    if((keyIsPressed == true) && (key == 'b')){
+    stroke(102,66,0);
+    line(mouseX - r, mouseY, mouseX + r, mouseY);
+    line(mouseX, mouseY - r, mouseX, mouseY + r);
+    }
+    
+    //紫
+    if((keyIsPressed == true) && (key == 'y')){
+    stroke(255,0,255);
+    line(mouseX - r, mouseY, mouseX + r, mouseY);
+    line(mouseX, mouseY - r, mouseX, mouseY + r);
+    }
+    if((keyIsPressed == true) && (key == 'h')){
+    stroke(230,69,230);
+    line(mouseX - r, mouseY, mouseX + r, mouseY);
+    line(mouseX, mouseY - r, mouseX, mouseY + r);
+    }
+    if((keyIsPressed == true) && (key == 'n')){
+    stroke(128,0,128);
+    line(mouseX - r, mouseY, mouseX + r, mouseY);
+    line(mouseX, mouseY - r, mouseX, mouseY + r);
+    }
+    
+    //ピンク
+    if((keyIsPressed == true) && (key == 'u')){
+    stroke(255,105,180);
+    line(mouseX - r, mouseY, mouseX + r, mouseY);
+    line(mouseX, mouseY - r, mouseX, mouseY + r);
+    }
+    if((keyIsPressed == true) && (key == 'j')){
+    stroke(255,192,203);
+    line(mouseX - r, mouseY, mouseX + r, mouseY);
+    line(mouseX, mouseY - r, mouseX, mouseY + r);
+    }
+    if((keyIsPressed == true) && (key == 'm')){
+    stroke(255,20,147);
+    line(mouseX - r, mouseY, mouseX + r, mouseY);
+    line(mouseX, mouseY - r, mouseX, mouseY + r);
+    }
+    
+    //アクアマリン
+    if((keyIsPressed == true) && (key == 'i')){
+    stroke(127,255,212);
+    line(mouseX - r, mouseY, mouseX + r, mouseY);
+    line(mouseX, mouseY - r, mouseX, mouseY + r);
+    }
+    //もも
+    if((keyIsPressed == true) && (key == 'k')){
+    stroke(255,170,128);
+    line(mouseX - r, mouseY, mouseX + r, mouseY);
+    line(mouseX, mouseY - r, mouseX, mouseY + r);
+    }
+    //肌色
+    if((keyIsPressed == true) && (key == 'o')){
+    stroke(255,222,173);
+    line(mouseX - r, mouseY, mouseX + r, mouseY);
+    line(mouseX, mouseY - r, mouseX, mouseY + r);
+    }
+    
+    //うすいむらさき
+    if((keyIsPressed == true) && (key == 'l')){
+    stroke(220,160,220);
+    line(mouseX - r, mouseY, mouseX + r, mouseY);
+    line(mouseX, mouseY - r, mouseX, mouseY + r);
+    }
+    //薄茶
+    if((keyIsPressed == true) && (key == 'p')){
+    stroke(205,133,63);
+    line(mouseX - r, mouseY, mouseX + r, mouseY);
+    line(mouseX, mouseY - r, mouseX, mouseY + r);
+    }
+    
+    
+}
+    
+function keyPressed(){
+    //お絵描き→線の大きさ・図形→球体の大きさ
+    if(keyCode == UP_ARROW){
+        a+=5;
+    }
+    
+    if(keyCode ==DOWN_ARROW){
+        a-=5;
+    }
+    
+    //backgroundの色
+    if(keyCode == LEFT_ARROW){
+        (k+=30)<230;
+    }
+    
+    if(keyCode ==RIGHT_ARROW){
+        k-=30;
+    }
+    
+    //線消す
+    if(keyCode == ENTER){
+        noStroke();
+    }
+    return false;
+}
+    
+    //図形参考https://infosmith.biz/blog/it/p5js-webgl-test
+    function drawObject() {
+    //draw 3d boxes and sphere
+
+    push();
+    rotateX(-frameCount / 100);
+    rotateY(frameCount / 50);
+    rotateZ(-frameCount / 100);
+    sphere(30);
+    pop();
+        
+    push();
+    rotateX(-frameCount / 200);
+    rotateY(50);
+    rotateZ(300);
+    fill(255, 165, 0, 50);
+    sphere(a);
+    pop();
+        
+    push();
+    rotateX(-frameCount / 100);
+    rotateY(frameCount / 50);
+    rotateZ(-frameCount / 100);
+    noFill();
+    ellipse(0,0,300,300);
+    pop();
+        
+    push();
+    rotateX(-frameCount / 100);
+    rotateY(frameCount / 50);
+    rotateZ(-frameCount / 100);
+    noFill();
+    ellipse(0,0,350,350);
+    pop();
+        
+    push();
+    rotateX(-frameCount / 100);
+    rotateY(frameCount / 100);
+    rotateZ(-frameCount / 100);
+    noFill();
+    ellipse(0,0,500,500);
+    pop();
+        
+    push();
+    rotateZ(frameCount /300);
+    rotateX(frameCount /80);
+    rotateY(-frameCount /400);
+    fill(255, 165, 0, 50);
+    torus(300, 3);
+    pop();
+        
+        
+    }
+ 
+    
+
+    
+    
+    
+
+</script>
+</head>
+<body>
+</body>
+</html>
